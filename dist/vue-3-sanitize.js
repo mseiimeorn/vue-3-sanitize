@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-    typeof define === 'function' && define.amd ? define(factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global["vue-3-sanitize"] = factory());
-})(this, (function () { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+    typeof define === 'function' && define.amd ? define(['exports'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global["vue-3-sanitize"] = {}));
+})(this, (function (exports) { 'use strict';
 
     var sanitizeHtml = require("sanitize-html");
 
@@ -25,12 +25,13 @@
     };
 
     var useVue3Sanitize = function useVue3Sanitize() {
-      vue.inject(vue3SanitizeKey);
+      return vue.inject(vue3SanitizeKey);
     };
 
+    exports["default"] = Vue3Sanitize;
     exports.useVue3Sanitize = useVue3Sanitize;
 
-    return Vue3Sanitize;
+    Object.defineProperty(exports, '__esModule', { value: true });
 
 }));
 //# sourceMappingURL=vue-3-sanitize.js.map

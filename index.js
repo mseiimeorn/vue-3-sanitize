@@ -18,5 +18,5 @@ const Vue3Sanitize = {
 
 const useVue3Sanitize = () => vue.inject(vue3SanitizeKey);
 
-export { useVue3Sanitize };
-export default Vue3Sanitize;
+exports.useVue3Sanitize = useVue3Sanitize;
+exports.Vue3Sanitize = Vue3Sanitize;
